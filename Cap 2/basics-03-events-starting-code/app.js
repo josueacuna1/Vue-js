@@ -3,17 +3,30 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
+      name: '',
+      confirmName: '',
+      name01:''
     };
   },
   methods:{
-    add(){
-      this.counter++
+    add(num){
+      this.counter = this.counter + num;
     },
-    remove(){
-      this.counter--
+    remove(num){
+      this.counter = this.counter - num;
     },
-    XPathResult(){
-      this.counter
+    setName(event){
+      this.name = event.target.value;
+    },
+    nameSubmit(event){
+      this.name01 = event.target.value;
+    },
+    submitForm(){
+      alert('submitted :)' + ' '+ this.name01);
+    },
+    confirm(){
+      this.confirmName = this.name;
+      this.name = '';
     }
   }
 });

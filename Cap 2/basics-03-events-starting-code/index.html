@@ -18,9 +18,17 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add">Add</button>
-      <button v-on:click="remove()">Remove</button>
+      <!--el right y el left sriven para agregar el disparador para cada uno de los botones de mause-->
+      <button v-on:click.left="add(10)">Add</button>
+      <button v-on:click.right="remove(5)">Remove</button>
       <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName" v-on:keyup.enter="confirm" v-bind:value="name">
+      <p>Your name is: {{ confirmName }}</p>
+
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" v-on:input="nameSubmit">
+        <button>Sing in</button>
+      </form>
     </section>
   </body>
 </html>

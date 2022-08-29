@@ -27,6 +27,23 @@ const app = Vue.createApp({
     confirm(){
       this.confirmName = this.name;
       this.name = '';
+    },
+    // outputFullname(){
+    //   if(this.name===''){
+    //     return '';
+    //   }
+    //   return this.name + ' ' + 'Acuña';
+    // },
+    resetInput(){
+      this.name = '';
+    }
+  },
+  computed:{
+    fullname(){
+      if(this.name===''){
+        return '';
+      }
+      return this.name + ' ' + 'Acuña';
     }
   }
 });
